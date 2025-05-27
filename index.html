@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-T">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L7Fitness Receitas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'l7-green': '#4CAF50',
+            'l7-green-dark': '#388E3C',
+            'l7-green-light': '#C8E6C9',
+            'l7-gray': '#f3f4f6', // Tailwind gray-100
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  @media print {
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif; /* Basic font for print */
+      background-color: #fff !important; /* Ensure white background */
+    }
+    .no-print {
+      display: none !important;
+    }
+    /* Hide general app chrome */
+    #root > div > header, /* App Header */
+    #root > div > div > nav[class*="hidden md:block"], /* Desktop Nav */
+    nav[class*="fixed bottom-0"] /* Bottom Nav */ {
+      display: none !important;
+    }
+    
+    /* Modal specific for printing recipe */
+    div[class*="fixed inset-0 bg-black bg-opacity-50"] { /* Modal backdrop */
+        position: static !important;
+        background-color: transparent !important;
+        display: block !important; /* Ensure it doesn't hide content */
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 0 !important;
+    }
+
+    #printable-recipe-content {
+      visibility: visible !important;
+      position: static !important; /* Changed from absolute for better flow */
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important; /* Full width for print */
+      max-width: 100% !important; /* Override max-w-2xl */
+      height: auto !important;
+      overflow: visible !important;
+      background-color: white !important;
+      padding: 20px !important; /* Consistent padding */
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      margin: 0 auto !important; /* Center content */
+      border: none !important; /* Remove modal border */
+    }
+    
+    #printable-recipe-content * {
+        visibility: visible !important; /* Ensure all children are visible */
+        color: #000 !important; /* Ensure text is black */
+    }
+
+    #printable-recipe-content img {
+      max-width: 80% !important; /* Control image size */
+      height: auto !important;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      page-break-inside: avoid;
+    }
+
+    #printable-recipe-content h2, 
+    #printable-recipe-content h3 {
+      page-break-after: avoid;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    #printable-recipe-content h2 { font-size: 1.8em; }
+    #printable-recipe-content h3 { font-size: 1.4em; }
+
+
+    #printable-recipe-content ul, 
+    #printable-recipe-content ol {
+      page-break-inside: avoid;
+      padding-left: 2em; /* Standard list padding */
+    }
+    
+    #printable-recipe-content li {
+        margin-bottom: 0.3em;
+    }
+
+    #printable-recipe-content .bg-l7-green-light {
+        background-color: #e8f5e9 !important; /* Lighter green for print */
+        border: 1px solid #ccc;
+    }
+    #printable-recipe-content .text-l7-green-dark {
+        color: #2e7d32 !important; /* Darker green for print */
+    }
+     #printable-recipe-content .text-l7-green {
+        color: #388e3c !important;
+    }
+
+    #main-content { /* Ensure main content area is visible if not printing a modal */
+        margin-left: 0 !important; 
+        padding-bottom: 0 !important;
+    }
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-9JTl470q.js"></script>
+</head>
+<body class="bg-l7-gray">
+  <div id="root"></div>
+</body>
+</html><link rel="stylesheet" href="index.css">
